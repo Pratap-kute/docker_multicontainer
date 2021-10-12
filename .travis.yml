@@ -4,20 +4,20 @@ services:
   - docker
 
 before_install:
-  - docker build -t amol/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t pratapkute/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true amol/react-test npm test
+  - docker run -e CI=true pratapkute/react-test npm test
 
 after_success:
-  - docker build -t amol/multi-client ./client
-  - docker build -t amol/multi-nginx ./nginx
-  - docker build -t amol/multi-server ./server
-  - docker build -t amol/multi-worker ./worker
+  - docker build -t pratapkute/multi-client ./client
+  - docker build -t pratapkute/multi-nginx ./nginx
+  - docker build -t pratapkute/multi-server ./server
+  - docker build -t pratapkute/multi-worker ./worker
   #log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #Take those images and push them to docker hub
-  - docker push amol/multi-client
-  - docker push amol/multi-nginx
-  - docker push amol/multi-server
-  - docker push amol/multi-worker
+  - docker push pratapkute/multi-client
+  - docker push pratapkute/multi-nginx
+  - docker push pratapkute/multi-server
+  - docker push pratapkute/multi-worker
