@@ -17,7 +17,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Fib calculater Kuberneties
+            Fib calculater Kuberneties v1
           </a>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other Page</Link>
