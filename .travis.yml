@@ -10,7 +10,7 @@ script:
   - docker run -e CI=true pratapkute/react-test npm test
 
 after_success:
-  - docker build -t pratapkute/multi-client ./client
+  - docker build -t pratapkute/multi-client:v1 ./client
   - docker build -t pratapkute/multi-nginx ./nginx
   - docker build -t pratapkute/multi-server ./server
   - docker build -t pratapkute/multi-worker ./worker
